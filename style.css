@@ -6,8 +6,11 @@ body {
 }
 
 body {
-  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  background-repeat: no-repeat;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(234, 249, 249, 0.67) 0.1%,
+    rgba(239, 249, 251, 0.63) 90.1%
+  );
 }
 
 form,
@@ -18,11 +21,23 @@ footer {
   text-align: center;
 }
 
+h1,
+input,
+ul {
+  font-family: "Poiret One", sans-serif;
+  letter-spacing: 2px;
+}
+
+p,
+footer {
+  font-family: "DM Mono", monospace;
+}
+
 .city-text-input,
 .city-search-input {
   padding: 7px 10px;
-  border: 1px solid #fff;
   border-radius: 7px;
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
 }
 
 .fahrenheit,
@@ -37,7 +52,7 @@ h1 {
 p {
   margin: 0;
   line-height: 1.5;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .app-container {
@@ -49,15 +64,25 @@ p {
   border-radius: 7px;
   background-image: url(dandelion-image.jpg);
   background-size: cover;
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.weather-info-container {
+  background-color: rgba(244, 251, 252, 0.3);
+  border-radius: 20px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .city-text-input {
   width: 50%;
+  border: 1px solid #fff;
 }
 
 .city-search-input {
   font-size: 14px;
   background-color: #b4e1f9;
+  border: 1px solid #b4e1f9;
 }
 
 .flex-style {
@@ -71,3 +96,40 @@ p {
 .current-temperature {
   font-size: 42px;
 }
+
+/* .dm-mono-light {
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.dm-mono-regular {
+  font-family: "DM Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-mono-medium {
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.dm-mono-light-italic {
+  font-family: "DM Mono", monospace;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.dm-mono-regular-italic {
+  font-family: "DM Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.dm-mono-medium-italic {
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
+  font-style: italic;
+}
+*/
