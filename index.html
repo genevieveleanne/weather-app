@@ -9,15 +9,20 @@
   <body>
     <div class="app-container">
       <form>
-        <input type="search" placeholder="Enter a city" id="" />
-        <input type="submit" value="Search" />
+        <input
+          type="search"
+          placeholder="Enter a city"
+          class="city-text-input"
+          id=""
+        />
+        <input type="submit" value="Search" class="city-search-input" id="" />
       </form>
 
       <h1>Atlanta</h1>
-      <ul>
-        <li>37</li>
-        <li>F |</li>
-        <li>C</li>
+      <ul class="flex-style">
+        <li class="current-temperature">37</li>
+        <li class="fahrenheit">F |</li>
+        <li class="celsius">C</li>
       </ul>
 
       <p>Mon, Nov 3 | weather description</p>
