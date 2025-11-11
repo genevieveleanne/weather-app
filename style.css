@@ -22,11 +22,30 @@ footer {
   text-align: center;
 }
 
+.app-container,
+.weather-info-container,
+.city-text-input,
+.city-search-input {
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
+}
+
 h1,
 input,
 ul {
   font-family: "Poiret One", sans-serif;
   letter-spacing: 2px;
+}
+
+li,
+.city-text-input,
+.city-search-input {
+  font-weight: bold;
+}
+
+.app-container,
+.city-text-input,
+.city-search-input {
+  border-radius: 7px;
 }
 
 p,
@@ -37,9 +56,6 @@ footer {
 .city-text-input,
 .city-search-input {
   padding: 7px 10px;
-  border-radius: 7px;
-  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
-  font-weight: bold;
 }
 
 .fahrenheit,
@@ -49,10 +65,6 @@ footer {
 
 h1 {
   font-size: 36px;
-}
-
-li {
-  font-weight: bold;
 }
 
 p {
@@ -67,18 +79,15 @@ p {
   margin-top: 20px;
   padding: 20px;
   border: 2px solid #fff;
-  border-radius: 7px;
   background-image: url(dandelion-image.jpg);
   background-size: cover;
-  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
 }
 
 .weather-info-container {
-  background-color: rgba(244, 251, 252, 0.3);
+  background-color: rgba(244, 251, 252, 0.4);
   border-radius: 20px;
   max-width: 500px;
   margin: 0 auto;
-  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
 }
 
 .city-text-input {
@@ -104,39 +113,13 @@ p {
   font-size: 42px;
 }
 
-/* .dm-mono-light {
-  font-family: "DM Mono", monospace;
-  font-weight: 300;
-  font-style: normal;
+.github-link {
+  color: #000;
+  text-decoration: none;
 }
 
-.dm-mono-regular {
-  font-family: "DM Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
+.github-link:hover {
+  color: rgb(23, 23, 244);
+  text-decoration: underline;
+  cursor: pointer;
 }
-
-.dm-mono-medium {
-  font-family: "DM Mono", monospace;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.dm-mono-light-italic {
-  font-family: "DM Mono", monospace;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.dm-mono-regular-italic {
-  font-family: "DM Mono", monospace;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.dm-mono-medium-italic {
-  font-family: "DM Mono", monospace;
-  font-weight: 500;
-  font-style: italic;
-}
-*/
