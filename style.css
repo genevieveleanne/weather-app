@@ -8,9 +8,10 @@ body {
 body {
   background: radial-gradient(
     circle at 10% 20%,
-    rgba(234, 249, 249, 0.67) 0.1%,
+    rgba(157, 224, 239, 0.67) 0.1%,
     rgba(239, 249, 251, 0.63) 90.1%
   );
+  background-attachment: fixed;
 }
 
 form,
@@ -38,6 +39,7 @@ footer {
   padding: 7px 10px;
   border-radius: 7px;
   box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
 }
 
 .fahrenheit,
@@ -49,10 +51,14 @@ h1 {
   font-size: 36px;
 }
 
+li {
+  font-weight: bold;
+}
+
 p {
   margin: 0;
   line-height: 1.5;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .app-container {
@@ -72,6 +78,7 @@ p {
   border-radius: 20px;
   max-width: 500px;
   margin: 0 auto;
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
 }
 
 .city-text-input {
