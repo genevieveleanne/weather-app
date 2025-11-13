@@ -80,5 +80,7 @@ function handleSubmit(event) {
   getWeather(userCity);
 }
 
+getWeather("Atlanta");
+
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
