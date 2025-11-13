@@ -1,4 +1,3 @@
-//Get user temperature, weather description, humidity, & wind speed
 //Change user temperature from fahreneheit to celsius
 //Get user's current location - Add button for it
 //Get user's forecast - Add a div for it
@@ -36,9 +35,28 @@ let now = new Date();
 
 currentDate.innerHTML = getDate(now);
 
-//CURRENT WEATHER
+//USER CURRENT WEATHER
 function displayCurrentWeather(response) {
-  console.log(response);
+  console.log(response.data);
+
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = response.data.city;
+
+  let currentTemperature = document.querySelector("#current-temperature");
+  let roundedTemperature = Math.round(response.data.temperature.current);
+  currentTemperature.innerHTML = `${roundedTemperature}°`;
+
+  let weatherDescription = document.querySelector("#weather-description");
+  weatherDescription.innerHTML = response.data.condition.description;
+
+  let weatherImage = document.querySelector("#weather-image");
+  weatherImage.innerHTML = `<img src="${response.data.condition.icon_url}"/>`;
+
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `${response.data.temperature.humidity}%`;
+
+  let windSpeed = document.querySelector("#wind-speed");
+  windSpeed.innerHTML = `${Math.round(response.data.wind.speed)} mph`;
 }
 
 //API CALLED
@@ -56,8 +74,10 @@ function handleSubmit(event) {
   event.preventDefault();
 
   let userCityInput = document.querySelector("#user-city-input");
+  let userCity = userCityInput.value;
+  userCity = userCity.toLowerCase().trim();
 
-  getWeather(userCityInput.value);
+  getWeather(userCity);
 }
 
 let form = document.querySelector("form");

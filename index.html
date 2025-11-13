@@ -26,19 +26,27 @@
       </form>
 
       <div class="weather-info-container">
-        <h1>Atlanta</h1>
+        <h1></h1>
         <ul class="flex-style">
-          <li class="current-temperature">37</li>
+          <li class="current-temperature" id="current-temperature"></li>
           <li class="fahrenheit">F |</li>
           <li class="celsius">C</li>
         </ul>
 
         <p>
           <span id="date"></span>
-          | sunny day
+          |
+          <span id="weather-description"></span>
+          <span id="weather-image"></span>
         </p>
-        <p>with a humidity of 54%</p>
-        <p>and a wind speed of 1.68 mph</p>
+        <p>
+          with a humidity of
+          <span id="humidity"></span>
+        </p>
+        <p>
+          and a wind speed of
+          <span id="wind-speed"></span>
+        </p>
       </div>
 
       <footer>
