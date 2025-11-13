@@ -48,6 +48,13 @@ li,
   border-radius: 7px;
 }
 
+.fahrenheit-link:hover,
+.celsius:hover,
+.github-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 p,
 footer {
   font-family: "DM Mono", monospace;
@@ -125,9 +132,4 @@ p {
   color: #000;
   text-decoration: none;
   transition: all 150ms ease-in-out;
-}
-
-.github-link:hover {
-  text-decoration: underline;
-  cursor: pointer;
 }
