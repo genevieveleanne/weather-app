@@ -50,7 +50,7 @@ function displayCurrentWeather(response) {
   weatherDescription.innerHTML = response.data.condition.description;
 
   let weatherImage = document.querySelector("#weather-image");
-  weatherImage.innerHTML = `<img src="${response.data.condition.icon_url}"/>`;
+  weatherImage.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon"/>`;
 
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `${response.data.temperature.humidity}%`;

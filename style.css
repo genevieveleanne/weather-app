@@ -113,13 +113,21 @@ p {
   font-size: 42px;
 }
 
+.weather-icon {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: 12px;
+  right: 5px;
+}
+
 .github-link {
   color: #000;
   text-decoration: none;
+  transition: all 150ms ease-in-out;
 }
 
 .github-link:hover {
-  color: rgb(23, 23, 244);
   text-decoration: underline;
   cursor: pointer;
 }
