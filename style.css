@@ -49,7 +49,7 @@ li,
 }
 
 .fahrenheit-link:hover,
-.celsius:hover,
+.celsius-link:hover,
 .github-link:hover {
   text-decoration: underline;
   cursor: pointer;
@@ -63,11 +63,6 @@ footer {
 .city-text-input,
 .city-search-input {
   padding: 7px 10px;
-}
-
-.fahrenheit,
-.celsius {
-  font-size: 17px;
 }
 
 h1 {
@@ -118,6 +113,10 @@ p {
 
 .current-temperature {
   font-size: 42px;
+}
+
+.units {
+  font-size: 17px;
 }
 
 .weather-icon {

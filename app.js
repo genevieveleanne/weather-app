@@ -1,4 +1,3 @@
-//Change user temperature from fahreneheit to celsius
 //Get user's current location - Add button for it
 //Get user's forecast - Add a div for it
 
@@ -35,10 +34,24 @@ let now = new Date();
 
 currentDate.innerHTML = getDate(now);
 
+//FAHRENHEIT & CELSIUS LINK
+function displayUnits(fahrenheit, event) {
+  event.preventDefault();
+
+  let celsiusTemperature = Math.round(((fahrenheit - 32) * 5) / 9);
+  //let fahrenheitConvert = Math.round((celsiusTemperature * 9) / 5 + 32);
+  let currentTemperature = document.querySelector("#current-temperature");
+  currentTemperature.innerHTML = `${celsiusTemperature}°`;
+
+  let fahrenheitTemperature = document.querySelector("#fahrenheit-link");
+  fahrenheitTemperature.addEventListener("click", () => {
+    let fahrenheitConvert = document.querySelector("#current-temperature");
+    fahrenheitConvert.innerHTML = `${fahrenheit}°`;
+  });
+}
+
 //USER CURRENT WEATHER
 function displayCurrentWeather(response) {
-  console.log(response.data);
-
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.city;
 
@@ -57,6 +70,11 @@ function displayCurrentWeather(response) {
 
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = `${Math.round(response.data.wind.speed)} mph`;
+
+  let celsiusLink = document.querySelector("#celsius-link");
+  celsiusLink.addEventListener("click", (event) => {
+    displayUnits(roundedTemperature, event);
+  });
 }
 
 //API CALLED
