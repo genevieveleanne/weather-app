@@ -33,14 +33,6 @@ let now = new Date();
 
 currentDate.innerHTML = getDate(now);
 
-//GET USER'S CURRENT LOCATION
-function displayUserLocation() {
-  console.log("Hello world!");
-}
-
-let locationButton = document.querySelector("#my-location");
-locationButton.addEventListener("click", displayUserLocation);
-
 //FAHRENHEIT & CELSIUS LINK
 function displayUnits(fahrenheit, event) {
   event.preventDefault();
@@ -84,15 +76,32 @@ function displayCurrentWeather(response) {
   });
 }
 
+//API KEY & BASEPOINT
+let apiKey = `1bac80fa0c32ft537387a483f19bf3fo`;
+let apiUrlBase = `https://api.shecodes.io/weather/v1/`;
+
 //API CALLED
 function getWeather(city) {
-  let apiKey = `1bac80fa0c32ft537387a483f19bf3fo`;
-  let apiUrlBase = `https://api.shecodes.io/weather/v1/`;
-
   let currentWeather = `${apiUrlBase}current?query=${city}&key=${apiKey}&units=imperial`;
 
   axios.get(currentWeather).then(displayCurrentWeather);
 }
+
+//GET USER'S CURRENT LOCATION
+function displayUserLocation() {
+  navigator.geolocation.getCurrentPosition((position) => {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+
+    let userLocation = `${apiUrlBase}current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
+    axios.get(userLocation).then((response) => {
+      displayCurrentWeather(response);
+    });
+  });
+}
+
+let locationButton = document.querySelector("#my-location");
+locationButton.addEventListener("click", displayUserLocation);
 
 //USER SUBMITS FORM
 function handleSubmit(event) {
