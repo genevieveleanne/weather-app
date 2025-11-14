@@ -23,6 +23,7 @@ footer {
 }
 
 .app-container,
+.my-location,
 .weather-info-container,
 .city-text-input,
 .city-search-input {
@@ -43,6 +44,7 @@ li,
 }
 
 .app-container,
+.my-location,
 .city-text-input,
 .city-search-input {
   border-radius: 7px;
@@ -55,14 +57,22 @@ li,
   cursor: pointer;
 }
 
-p,
-footer {
-  font-family: "DM Mono", monospace;
-}
-
+.my-location,
 .city-text-input,
 .city-search-input {
   padding: 7px 10px;
+}
+
+p,
+footer,
+.my-location {
+  font-family: "DM Mono", monospace;
+}
+
+.my-location,
+.city-search-input {
+  background-color: #b4e1f9;
+  border: 1px solid #b4e1f9;
 }
 
 h1 {
@@ -92,6 +102,12 @@ p {
   margin: 0 auto;
 }
 
+.my-location {
+  font-size: 12px;
+  position: relative;
+  top: 32px;
+}
+
 .city-text-input {
   width: 50%;
   border: 1px solid #fff;
@@ -99,8 +115,6 @@ p {
 
 .city-search-input {
   font-size: 14px;
-  background-color: #b4e1f9;
-  border: 1px solid #b4e1f9;
 }
 
 .flex-style {

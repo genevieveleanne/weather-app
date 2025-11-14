@@ -1,4 +1,3 @@
-//Get user's current location - Add button for it
 //Get user's forecast - Add a div for it
 
 //GET DATE
@@ -34,12 +33,20 @@ let now = new Date();
 
 currentDate.innerHTML = getDate(now);
 
+//GET USER'S CURRENT LOCATION
+function displayUserLocation() {
+  console.log("Hello world!");
+}
+
+let locationButton = document.querySelector("#my-location");
+locationButton.addEventListener("click", displayUserLocation);
+
 //FAHRENHEIT & CELSIUS LINK
 function displayUnits(fahrenheit, event) {
   event.preventDefault();
 
   let celsiusTemperature = Math.round(((fahrenheit - 32) * 5) / 9);
-  //let fahrenheitConvert = Math.round((celsiusTemperature * 9) / 5 + 32);
+
   let currentTemperature = document.querySelector("#current-temperature");
   currentTemperature.innerHTML = `${celsiusTemperature}°`;
 
