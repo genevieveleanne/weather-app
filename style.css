@@ -30,11 +30,24 @@ footer {
   box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
 }
 
+.app-container,
+.my-location,
+.city-text-input,
+.city-search-input {
+  border-radius: 7px;
+}
+
 h1,
 input,
 ul {
   font-family: "Poiret One", sans-serif;
   letter-spacing: 2px;
+}
+
+p,
+footer,
+.my-location {
+  font-family: "DM Mono", monospace;
 }
 
 li,
@@ -43,11 +56,10 @@ li,
   font-weight: bold;
 }
 
-.app-container,
 .my-location,
 .city-text-input,
 .city-search-input {
-  border-radius: 7px;
+  padding: 7px 10px;
 }
 
 .fahrenheit-link:hover,
@@ -55,18 +67,6 @@ li,
 .github-link:hover {
   text-decoration: underline;
   cursor: pointer;
-}
-
-.my-location,
-.city-text-input,
-.city-search-input {
-  padding: 7px 10px;
-}
-
-p,
-footer,
-.my-location {
-  font-family: "DM Mono", monospace;
 }
 
 .my-location,

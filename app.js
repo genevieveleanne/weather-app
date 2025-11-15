@@ -1,5 +1,3 @@
-//Get user's forecast - Add a div for it
-
 //GET DATE
 function getDate(date) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -83,8 +81,10 @@ let apiUrlBase = `https://api.shecodes.io/weather/v1/`;
 //API CALLED
 function getWeather(city) {
   let currentWeather = `${apiUrlBase}current?query=${city}&key=${apiKey}&units=imperial`;
+  let forecast = `${apiUrlBase}forecast?query=${city}&key=${apiKey}&units=imperial`;
 
   axios.get(currentWeather).then(displayCurrentWeather);
+  axios.get(forecast).then(displayForecast);
 }
 
 //GET USER'S CURRENT LOCATION
@@ -102,6 +102,11 @@ function displayUserLocation() {
 
 let locationButton = document.querySelector("#my-location");
 locationButton.addEventListener("click", displayUserLocation);
+
+//GET USER FORECAST
+function displayForecast(response) {
+  console.log(response.data.daily);
+}
 
 //USER SUBMITS FORM
 function handleSubmit(event) {
