@@ -97,6 +97,11 @@ function displayUserLocation() {
     axios.get(userLocation).then((response) => {
       displayCurrentWeather(response);
     });
+
+    let forecast = `${apiUrlBase}forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
+    axios.get(forecast).then((response) => {
+      displayForecast(response);
+    });
   });
 }
 
