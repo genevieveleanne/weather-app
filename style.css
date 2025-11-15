@@ -170,3 +170,7 @@ h3 {
   text-decoration: none;
   transition: all 150ms ease-in-out;
 }
+
+footer {
+  margin-top: 15px;
+}
