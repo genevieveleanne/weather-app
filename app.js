@@ -31,6 +31,31 @@ let now = new Date();
 
 currentDate.innerHTML = getDate(now);
 
+//API KEY & BASEPOINT
+let apiKey = `1bac80fa0c32ft537387a483f19bf3fo`;
+let apiUrlBase = `https://api.shecodes.io/weather/v1/`;
+
+//CURRENT LOCATION BUTTON
+function displayUserLocation() {
+  navigator.geolocation.getCurrentPosition((position) => {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+
+    let userLocation = `${apiUrlBase}current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
+    axios.get(userLocation).then((response) => {
+      displayCurrentWeather(response);
+    });
+
+    let forecast = `${apiUrlBase}forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
+    axios.get(forecast).then((response) => {
+      displayForecast(response);
+    });
+  });
+}
+
+let locationButton = document.querySelector("#my-location");
+locationButton.addEventListener("click", displayUserLocation);
+
 //FAHRENHEIT & CELSIUS LINK
 function displayUnits(fahrenheit, event) {
   event.preventDefault();
@@ -47,7 +72,7 @@ function displayUnits(fahrenheit, event) {
   });
 }
 
-//USER CURRENT WEATHER
+//USER'S CURRENT WEATHER
 function displayCurrentWeather(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.city;
@@ -73,40 +98,6 @@ function displayCurrentWeather(response) {
     displayUnits(roundedTemperature, event);
   });
 }
-
-//API KEY & BASEPOINT
-let apiKey = `1bac80fa0c32ft537387a483f19bf3fo`;
-let apiUrlBase = `https://api.shecodes.io/weather/v1/`;
-
-//API CALLED
-function getWeather(city) {
-  let currentWeather = `${apiUrlBase}current?query=${city}&key=${apiKey}&units=imperial`;
-  let forecast = `${apiUrlBase}forecast?query=${city}&key=${apiKey}&units=imperial`;
-
-  axios.get(currentWeather).then(displayCurrentWeather);
-  axios.get(forecast).then(displayForecast);
-}
-
-//GET USER'S CURRENT LOCATION
-function displayUserLocation() {
-  navigator.geolocation.getCurrentPosition((position) => {
-    let latitude = position.coords.latitude;
-    let longitude = position.coords.longitude;
-
-    let userLocation = `${apiUrlBase}current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
-    axios.get(userLocation).then((response) => {
-      displayCurrentWeather(response);
-    });
-
-    let forecast = `${apiUrlBase}forecast?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
-    axios.get(forecast).then((response) => {
-      displayForecast(response);
-    });
-  });
-}
-
-let locationButton = document.querySelector("#my-location");
-locationButton.addEventListener("click", displayUserLocation);
 
 //FORMAT FORECAST DAY
 function formatDay(timestamp) {
@@ -140,6 +131,15 @@ function displayForecast(response) {
 
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
+}
+
+//API CALLED
+function getWeather(city) {
+  let currentWeather = `${apiUrlBase}current?query=${city}&key=${apiKey}&units=imperial`;
+  let forecast = `${apiUrlBase}forecast?query=${city}&key=${apiKey}&units=imperial`;
+
+  axios.get(currentWeather).then(displayCurrentWeather);
+  axios.get(forecast).then(displayForecast);
 }
 
 //USER SUBMITS FORM

@@ -18,7 +18,8 @@ form,
 h1,
 ul,
 p,
-footer {
+footer,
+.forecast-flex-style {
   text-align: center;
 }
 
@@ -70,6 +71,17 @@ li,
   cursor: pointer;
 }
 
+h3,
+.forecast-temperature {
+  font-size: 21px;
+}
+
+.weather-info-container,
+.forecast-flex-style {
+  background-color: rgba(244, 251, 252, 0.3);
+  border-radius: 20px;
+}
+
 .my-location,
 .city-search-input {
   background-color: #b4e1f9;
@@ -97,8 +109,6 @@ p {
 }
 
 .weather-info-container {
-  background-color: rgba(244, 251, 252, 0.4);
-  border-radius: 20px;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -143,17 +153,9 @@ p {
 }
 
 .forecast-flex-style {
-  text-align: center;
   display: flex;
   justify-content: space-evenly;
   margin-top: 25px;
-  background-color: rgba(244, 251, 252, 0.3);
-  border-radius: 20px;
-}
-
-h3,
-.forecast-temperature {
-  font-size: 21px;
 }
 
 h3 {
