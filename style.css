@@ -8,8 +8,8 @@ body {
 body {
   background: radial-gradient(
     circle at 10% 20%,
-    rgba(157, 224, 239, 0.67) 0.1%,
-    rgba(239, 249, 251, 0.63) 90.1%
+    rgba(115, 162, 243, 0.67) 0.1%,
+    rgba(251, 255, 255, 0.63) 90.1%
   );
   background-attachment: fixed;
 }
@@ -78,14 +78,23 @@ h3,
 
 .weather-info-container,
 .forecast-flex-style {
-  background-color: rgba(244, 251, 252, 0.3);
+  background-color: rgba(244, 251, 252, 0.4);
   border-radius: 20px;
+}
+
+.my-location:hover,
+.city-search-input:hover {
+  background-color: #6ca2f7;
+  border: 1px solid #6ca2f7;
+  color: #fbffff;
+  cursor: pointer;
 }
 
 .my-location,
 .city-search-input {
-  background-color: #b4e1f9;
-  border: 1px solid #b4e1f9;
+  background-color: #fbffff;
+  border: 1px solid #fbffff;
+  transition: all 150ms ease-in-out;
 }
 
 h1 {
@@ -104,7 +113,7 @@ p {
   margin-top: 20px;
   padding: 20px;
   border: 2px solid #fff;
-  background-image: url(dandelion-image.jpg);
+  background-image: url(sky-image.jpg);
   background-size: cover;
 }
 
