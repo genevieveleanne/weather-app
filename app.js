@@ -103,9 +103,37 @@ function displayUserLocation() {
 let locationButton = document.querySelector("#my-location");
 locationButton.addEventListener("click", displayUserLocation);
 
+//FORMAT FORECAST DAY
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 //GET USER FORECAST
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecastHtml = "";
+
+  response.data.daily.forEach((day, index) => {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
+      <div>
+        <h3>${formatDay(day.time)}</h3>
+        <img src="${day.condition.icon_url}" />
+        <p>
+            <strong>${Math.round(day.temperature.maximum)}º</strong>
+          | 
+          ${Math.round(day.temperature.minimum)}º
+      </p>
+    `;
+    }
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
 }
 
 //USER SUBMITS FORM
