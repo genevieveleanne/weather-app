@@ -38,6 +38,7 @@ footer {
 }
 
 h1,
+h3,
 input,
 ul {
   font-family: "Poiret One", sans-serif;
@@ -139,6 +140,29 @@ p {
   position: relative;
   top: 12px;
   right: 5px;
+}
+
+.forecast-flex-style {
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 25px;
+  background-color: rgba(244, 251, 252, 0.3);
+  border-radius: 20px;
+}
+
+h3,
+.forecast-temperature {
+  font-size: 21px;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.forecast-weather-icon {
+  height: 55px;
+  width: 55px;
 }
 
 .github-link {

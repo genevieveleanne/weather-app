@@ -118,6 +118,8 @@ function formatDay(timestamp) {
 
 //GET USER FORECAST
 function displayForecast(response) {
+  console.log(response.data.daily);
+
   let forecastHtml = "";
 
   response.data.daily.forEach((day, index) => {
@@ -125,15 +127,14 @@ function displayForecast(response) {
       forecastHtml =
         forecastHtml +
         `
-      <div>
-        <h3>${formatDay(day.time)}</h3>
-        <img src="${day.condition.icon_url}" />
-        <p>
-            <strong>${Math.round(day.temperature.maximum)}º</strong>
-          | 
-          ${Math.round(day.temperature.minimum)}º
-      </p>
-    `;
+    <div>
+      <h3>${formatDay(day.time)}</h3>
+      <img src="${day.condition.icon_url}" class="forecast-weather-icon" />
+      <div class="forecast-temperature">
+        <strong>${Math.round(day.temperature.maximum)}º</strong> | 
+    ${Math.round(day.temperature.minimum)}º
+      </div>
+    </div>`;
     }
   });
 
