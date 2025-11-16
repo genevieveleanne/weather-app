@@ -109,8 +109,6 @@ function formatDay(timestamp) {
 
 //GET USER FORECAST
 function displayForecast(response) {
-  console.log(response.data.daily);
-
   let forecastHtml = "";
 
   response.data.daily.forEach((day, index) => {
